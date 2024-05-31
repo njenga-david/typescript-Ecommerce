@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKUT Buy and Sell Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="header-text">Welcome to Dekut Buy and Sell Store. Buy or Sell Anything Here</h1>
+        </div>
+        <br>
+        <div class="header-container"></div>
+        <div class="navigation">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search products here...">
+                <button type="submit" id="searchForm">Search</button>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Products</a> 
+                <a href="#">FAQs</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="cart-icon" id="cart-icon">
+                <div class="shopping">
+                    <img src="/images/cart.png" alt="Cart">
+                    <span class="quantity" onclick="toggleCart()">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list"></div>
+    </div>
+
+    <div class="cart" id="cart-card" style="display: none;">
+        <h1>Cart</h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <input type="text" class="discount" placeholder="Enter discount %">
+            <button class="applyDiscount">Apply Discount</button>
+            <div class="closeShopping">Exit</div>
+            <button class="checkout">Order Now</button>
+        </div>
+    </div>
+
+    <script src="shop.js"></script>
+    <script>
+        function toggleCart() {
+            const cart = document.getElementById('cart-card');
+            if (cart.style.display === 'none' || cart.style.display === '') {
+                cart.style.display = 'block';
+            } else {
+                cart.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
